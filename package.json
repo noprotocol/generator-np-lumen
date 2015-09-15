@@ -1,6 +1,6 @@
 {
   "name": "generator-np-lumen",
-  "version": "1.0.0",
+  "version": "1.0.0-beta",
   "description": "A Lumen generator for Yeoman based on the best practices of NoProtocol",
   "keywords": [
     "yeoman-generator",
