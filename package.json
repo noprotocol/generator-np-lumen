@@ -1,0 +1,53 @@
+{
+  "name": "generator-np-lumen",
+  "version": "1.0.0",
+  "description": "A Lumen generator for Yeoman based on the best practices of NoProtocol",
+  "keywords": [
+    "yeoman-generator",
+    "lumen",
+    "laravel",
+    "NoProtocol",
+    "yo",
+    "yeoman"
+  ],
+  "homepage": "https://github.com/NoProtocol/generator-np-lumen",
+  "bugs": {
+    "url": "https://github.com/NoProtocol/generator-np-lumen/issues"
+  },
+  "author": {
+    "name": "Govert Verschuur",
+    "email": "govert@noprotocol.nl",
+    "url": "https://github.com/NoProtocol"
+  },
+  "contributors": [{
+    "name": "Stef van den Ham",
+    "email": "stef@mindthecode.com",
+    "url": "http://mindthecode.com"
+  }],
+  "main": "app/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/NoProtocol/generator-np-lumen.git"
+  },
+   "dependencies": {
+    "chalk": "^1.0.0",
+    "change-case": "^2.3.0",
+    "fs-extra": "^0.23.1",
+    "junk": "^1.0.2",
+    "passthru": "^0.4.0",
+    "shelljs": "^0.5.3",
+    "yeoman-generator": "^0.19.0",
+    "yosay": "^1.0.2"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "peerDependencies": {
+    "yo": ">=1.4.6"
+  },
+  "engines": {
+    "node": ">=0.8.0",
+    "npm": ">=1.2.10"
+  },
+  "license": "MIT"
+}
