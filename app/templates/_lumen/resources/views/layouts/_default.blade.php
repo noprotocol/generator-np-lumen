@@ -12,17 +12,17 @@
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
 
-        <meta property="og:title" content="">
-        <meta property="og:description" content="">
-        <meta property="og:site_name" content="">
+        <meta property="og:title" content="@yield('social.title')">
+        <meta property="og:description" content="@yield('social.description')">
+        <meta property="og:site_name" content="@yield('social.site_name')">
         <meta property="og:url" content="{{ route('home') }}">
-        <meta property="og:image" content="">
+        <meta property="og:image" content="@yield('social.image')">
         <meta property="og:image:type" content="image/jpeg">
-        <meta property="og:image:width" content="">
-        <meta property="og:image:height" content="">
+        <meta property="og:image:width" content="@yield('social.image.width')">
+        <meta property="og:image:height" content="@yield('social.image.height')">
 
         <meta name="csrf-token" content="{{ csrf_token() }}">
-         <base href="{{ route('home') }}/"></base>
+        <base href="{{ route('home') }}/"></base>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="build/css/main.css">
     </head>
@@ -30,7 +30,7 @@
 
         @yield('content')
 
-        <!--<script src="build/js/bundle.min.js"></script>-->    
+        <!--<script src="build/js/bundle.min.js"></script>-->
         <script src="build/js/app.min.js"></script>
 
         @if (App::environment() === 'production')
