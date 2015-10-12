@@ -11,5 +11,10 @@
 |
 */
 
-$app->get('/', ['as' => 'home', 'uses' => 'PagesController@noprotocol']);
-$app->get('robots.txt', ['as' => 'robots', 'uses' => 'RobotsController@index']);
+/**
+ * Older versions of lumen dont auto reslove to the App\Http\Controllers namespace
+ *
+ * Preceding backslash added to remain compatible in newer versions
+ */
+$app->get('/', ['as' => 'home', 'uses' => '\App\Http\Controllers\PagesController@noprotocol']);
+$app->get('robots.txt', ['as' => 'robots', 'uses' => '\App\Http\Controllers\RobotsController@index']);
