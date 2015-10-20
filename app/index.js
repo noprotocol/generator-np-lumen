@@ -350,7 +350,15 @@ NpLumenGenerator.prototype.setupBackendAssets = function () {
 NpLumenGenerator.prototype.setupBackend = function () {
   this.log.write().ok('Setting up backend (routes, controllers, NoProtocol splash page, etc)');
 
-  fs.copy(__dirname + '/templates/_lumen/app/Http/_routes.php', 'app/Http/routes.php', logError);
+  /**
+   * Added default controller namespace to the routes in the legacy file because 
+   * pre 5.1.0 versions of lumen don't automatically resolve the routes
+   */
+  var routeFile = '/templates/_lumen/app/Http/_routes.php';
+  if (settings.lumenVersion <= "v5.1.0") {
+    routeFile = '/templates/_lumen/app/Http/_routes_legacy.php';
+  }
+  fs.copy(__dirname + routeFile, 'app/Http/routes.php', logError);
   fs.copy(__dirname + '/templates/_lumen/app/Http/Controllers/_PagesController.php', 'app/Http/Controllers/PagesController.php', logError); 
   fs.copy(__dirname + '/templates/_lumen/app/Http/Controllers/_RobotsController.php', 'app/Http/Controllers/RobotsController.php', logError); 
   fs.copy(__dirname + '/templates/_lumen/resources/views/_noprotocol.blade.php', 'resources/views/noprotocol.blade.php', logError);

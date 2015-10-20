@@ -16,5 +16,5 @@
  *
  * Preceding backslash added to remain compatible in newer versions
  */
-$app->get('/', ['as' => 'home', 'uses' => 'PagesController@noprotocol']);
-$app->get('robots.txt', ['as' => 'robots', 'uses' => 'RobotsController@index']);
+$app->get('/', ['as' => 'home', 'uses' => '\App\Http\Controllers\PagesController@noprotocol']);
+$app->get('robots.txt', ['as' => 'robots', 'uses' => '\App\Http\Controllers\RobotsController@index']);
