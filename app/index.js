@@ -299,6 +299,7 @@ NpLumenGenerator.prototype.setupFrontendFiles = function () {
 
   fs.copy(__dirname + '/templates/_lumen/public/_.htaccess', './public/.htaccess', logError);
   fs.copy(__dirname + '/templates/_lumen/public/_favicon.ico', './public/favicon.ico', logError);
+  fs.copy(__dirname + '/templates/_lumen/public/_index.php', './public/index.php', logError);
   fs.copy(__dirname + '/templates/_lumen/public/img/_noprotocol-logo.png', './public/img/noprotocol-logo.png', logError);
 
   // create webroot asset & dist folders (css, js, etc)
