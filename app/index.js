@@ -63,17 +63,17 @@ NpLumenGenerator.prototype.animateLogo = function () {
   var cb = this.async();
   this.log.write();
   var count = 35;
-  var no = '\r   NO'.bold;
-  var protocol = 'PROTOCOL'.magenta.bold;
+  var no = chalk.bold('\r   NO');
+  var protocol = chalk.gray.bold('PROTOCOL');
   var self = this;
   var animate = function () {
-    self.log.write(no + (new Array(count).join(' ')) + protocol + ':// '.bold);
+    self.log.write(no + chalk.bold(new Array(count).join(' ')) + protocol + ':// ');
     count--;
     if (count === 0) {
       setTimeout(function () {
         self.log.write(no + protocol + ';// ');
         setTimeout(function () {
-          self.log.write(no + protocol + ':// '.bold);
+          self.log.write(chalk.bold(no + protocol + ':// '));
           setTimeout(function () {
             self.log.write('\n\n');
             cb();
@@ -178,7 +178,7 @@ NpLumenGenerator.prototype.configureApp = function () {
         },
         type    : 'confirm',
         name    : 'isRootUser',
-        message : 'Are you using ' + ' root/root '.red + ' for database access?',
+        message : 'Are you using ' + chalk.red(' root/root ') + ' for database access?',
         default : true
       },
       {
