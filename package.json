@@ -19,25 +19,28 @@
     "email": "govert@noprotocol.nl",
     "url": "https://github.com/NoProtocol"
   },
-  "contributors": [{
-    "name": "Stef van den Ham",
-    "email": "stef@mindthecode.com",
-    "url": "http://mindthecode.com"
-  }],
+  "contributors": [
+    {
+      "name": "Stef van den Ham",
+      "email": "stef@mindthecode.com",
+      "url": "http://mindthecode.com"
+    }
+  ],
   "main": "app/index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/NoProtocol/generator-np-lumen.git"
   },
-   "dependencies": {
+  "dependencies": {
     "chalk": "^1.0.0",
     "change-case": "^2.3.0",
     "fs-extra": "^0.23.1",
     "junk": "^1.0.2",
     "passthru": "^0.4.0",
     "shelljs": "^0.5.3",
-    "yeoman-generator": "^0.19.0",
-    "yosay": "^1.0.2"
+    "yeoman-generator": "^0.24.1",
+    "yosay": "^1.0.2",
+    "snyk": "^1.147.4"
   },
   "devDependencies": {
     "mocha": "*"
@@ -49,5 +52,10 @@
     "node": ">=0.8.0",
     "npm": ">=1.2.10"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
